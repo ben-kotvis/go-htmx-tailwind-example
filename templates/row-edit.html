@@ -19,13 +19,14 @@
     />
   </td>
   <td class="whitespace-nowrap px-6 py-4">
-    <input
-      type="text"
+    <select
       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       data-include-edit="{{.ID}}"
       name="country"
-      value="{{.Country}}"
-    />
+    >
+    <option value="United States" {{ $B := "United States" }}{{ if eq $B .Country }}selected{{ else }}{{ end }}>United States</option>
+    <option value="Canada" {{ $B := "Canada" }}{{ if eq $B .Country }}selected{{ else }}{{ end }}>Canada</option>
+  </select>
   </td>
   <td class="whitespace-nowrap px-1 py-1">
     <a
@@ -33,7 +34,7 @@
       hx-target="#datarow-{{.ID}}"
       hx-swap="outerHTML"
       hx-indicator="#processing"
-      hx-include="input[data-include-edit='{{.ID}}']"
+      hx-include="[data-include-edit='{{.ID}}']"
       class="inline-flex items-center h-8 px-4 m-2 text-sm text-blue-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-blue-800"
       href=""
       >Save</a

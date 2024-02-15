@@ -3,3 +3,4 @@ app
 *.test
 *.out
 tmp
+__debug_*
