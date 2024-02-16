@@ -16,14 +16,10 @@
     </a>
   </td>
   <td class="whitespace-nowrap px-1 py-1">
-    <a
-      hx-delete="/company/{{.ID}}"
-      hx-target="#companies"
-      hx-confirm="Are you sure you want to delete {{.Company}}?"
-      hx-indicator="#processing"
+    <button
       class="hover:underline text-blue-700"
+      hx-get="/modal-confirm.html" hx-target="body" hx-swap="beforeend"
       href=""
-      >Delete</a
-    >
+      >Delete</button>
   </td>
 </tr>

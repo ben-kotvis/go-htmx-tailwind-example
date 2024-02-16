@@ -40,6 +40,7 @@ func main() {
 
 	//add routes
 	router := http.NewServeMux()
+
 	router.Handle("/css/output.css", http.FileServer(http.FS(css)))
 
 	router.Handle("/company/add", web.Action(companyAdd))
@@ -53,6 +54,8 @@ func main() {
 
 	router.Handle("/", web.Action(index))
 	router.Handle("/index.html", web.Action(index))
+
+	router.Handle("/modal-confirm.html", web.Action(modal))
 
 	//logging/tracing
 	nextRequestID := func() string {

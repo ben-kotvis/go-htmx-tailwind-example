@@ -51,9 +51,14 @@ start: build
 ## css: build tailwindcss
 .PHONY: css
 css:
-	tailwindcss -i css/input.css -o css/output.css --minify
+	./tailwindcss -i css/input.css -o css/output.css 
+#--minify
 
 ## css-watch: watch build tailwindcss
 .PHONY: css-watch
 css-watch:
 	tailwindcss -i css/input.css -o css/output.css --watch
+
+.PHONY: bootstrap
+bootstrap: 
+	.devcontainer/start.sh

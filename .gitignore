@@ -4,3 +4,4 @@ app
 *.out
 tmp
 __debug_*
+node_modules*

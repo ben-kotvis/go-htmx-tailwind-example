@@ -20,6 +20,10 @@ func index(r *http.Request) *web.Response {
 	return web.HTML(http.StatusOK, html, "index.html", data, nil)
 }
 
+func modal(r *http.Request) *web.Response {
+	return web.HTML(http.StatusOK, html, "modal-confirm.html", nil, nil)
+}
+
 // GET /company/add
 func companyAdd(r *http.Request) *web.Response {
 	return web.HTML(http.StatusOK, html, "company-add.html", data, nil)
