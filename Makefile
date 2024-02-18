@@ -46,7 +46,7 @@ docker-run:
 ## start: build and run local project
 .PHONY: start
 start: build
-	air
+	air -c /workspaces/go-htmx-tailwind-example/.air.toml
 
 ## css: build tailwindcss
 .PHONY: css

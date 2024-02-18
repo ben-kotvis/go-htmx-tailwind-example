@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "go",
+            "label": "go: build package",
+            "command": "build",
+            "args": [
+                "${fileDirname}"
+            ],
+            "problemMatcher": [
+                "$go"
+            ],
+            "group": "build",
+            "detail": "cd /workspaces/go-htmx-tailwind-example; go build ${fileDirname}"
+        },
+        {
+            "type": "shell",
+            "label": "start air",
+            "command": "sleep 2 & make start",
+            "options": {
+                "cwd": "/workspaces/go-htmx-tailwind-example/"
+            },
+            "isBackground": true,
+            "problemMatcher": [
+                {
+                  "pattern": [
+                    {
+                      "regexp": ".",
+                      "file": 1,
+                      "location": 2,
+                      "message": 3,
+                      
+                    }
+                  ],
+                  "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": ".",
+                  }
+                }
+              ]
+        }
+    ]
+}

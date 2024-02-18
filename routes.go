@@ -21,7 +21,9 @@ func index(r *http.Request) *web.Response {
 }
 
 func modal(r *http.Request) *web.Response {
-	return web.HTML(http.StatusOK, html, "modal-confirm.html", nil, nil)
+	id, _ := web.PathLast(r)
+	row := getCompanyByID(id)
+	return web.HTML(http.StatusOK, html, "modal-confirm.html", row, nil)
 }
 
 // GET /company/add

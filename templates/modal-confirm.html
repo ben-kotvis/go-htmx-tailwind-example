@@ -1,11 +1,15 @@
 <div id="modal" _="on closeModal add .closing then wait for animationend then remove me">
 	<div class="modal-underlay" _="on click trigger closeModal"></div>
 	<div class="modal-content">
-		<h1>Modal Dialog</h1>
-		This is the modal content.
-		You can put anything here, like text, or a form, or an image.
+		<h1>Warning!</h1>
+		Delete operations cannot be undone. Please confirm that you want to delete.
 		<br>
 		<br>
-		<button _="on click trigger closeModal">Close</button>
+		<button _="on click trigger closeModal">Cancel</button>
+		<button _="on click trigger closeModal"
+		hx-delete="/company/{{.ID}}"
+		hx-target="#companies"
+		hx-indicator="#processing"
+		>Confirm</button>
 	</div>
 </div>

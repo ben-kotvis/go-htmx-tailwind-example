@@ -10,6 +10,21 @@
             "request": "launch",
             "mode": "auto",
             "program": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",
+            "mode": "exec",
+            "program": "${workspaceFolder}/tmp/main"
+        },
+        {
+            "name": "Connect to external session",
+            "type": "go",
+            "request": "attach",
+            "mode": "remote",
+            "port": 41581,
+            "debugAdapter": "dlv-dap"
         }
     ]
 }

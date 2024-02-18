@@ -55,7 +55,7 @@ func main() {
 	router.Handle("/", web.Action(index))
 	router.Handle("/index.html", web.Action(index))
 
-	router.Handle("/modal-confirm.html", web.Action(modal))
+	router.Handle("/modal-confirm/", web.Action(modal))
 
 	//logging/tracing
 	nextRequestID := func() string {
