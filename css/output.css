@@ -866,11 +866,6 @@ select {
     --tw-border-opacity: 1;
     border-color: rgb(115 115 115 / var(--tw-border-opacity));
   }
-
-  .dark\:bg-slate-900 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-  }
 }
 
 @media (min-width: 640px) {
@@ -1040,4 +1035,13 @@ select {
   100% {
     transform: scale(0.9);
   }
-} 
+}
+
+.heading {
+  position: static;
+  background-color: black;
+  color: white;
+  top:0;
+  left: 0;
+  width: 100%
+}

@@ -31,6 +31,60 @@ func init() {
 			Contact: "Satya Nadella",
 			Country: "United States",
 		},
+		{
+			ID:      "4",
+			Company: "Amazon",
+			Contact: "Jeff Bezos",
+			Country: "United States",
+		},
+		{
+			ID:      "5",
+			Company: "Apple",
+			Contact: "Tim Cook",
+			Country: "United States",
+		},
+		{
+			ID:      "6",
+			Company: "Microsoft",
+			Contact: "Satya Nadella",
+			Country: "United States",
+		},
+		{
+			ID:      "1",
+			Company: "Amazon",
+			Contact: "Jeff Bezos",
+			Country: "United States",
+		},
+		{
+			ID:      "2",
+			Company: "Apple",
+			Contact: "Tim Cook",
+			Country: "United States",
+		},
+		{
+			ID:      "3",
+			Company: "Microsoft",
+			Contact: "Satya Nadella",
+			Country: "United States",
+		},
+		{
+			ID:      "4",
+			Company: "Amazon",
+			Contact: "Jeff Bezos",
+			Country: "United States",
+		},
+		{
+			ID:      "5",
+			Company: "Apple",
+			Contact: "Tim Cook",
+			Country: "United States",
+		},
+		{
+			ID:      "6",
+			Company: "Microsoft",
+			Contact: "Satya Nadella",
+			Country: "United States",
+		},
 	}
 }
 

@@ -90,4 +90,13 @@
 @keyframes zoomOut {
 	0% {transform: scale(1);}
 	100% {transform: scale(0.9);}
-} 
+}
+
+.heading {
+	position: fixed;
+	background-color: black;
+	color: white;
+	top:0;
+	left: 0;
+	width: 100%
+}
