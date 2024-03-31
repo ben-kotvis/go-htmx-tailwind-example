@@ -1,7 +1,9 @@
 package main
 
 import (
+	"cmp"
 	"net/http"
+	"slices"
 
 	"github.com/jritsema/gotoolbox/web"
 )
@@ -45,6 +47,7 @@ func companyEdit(r *http.Request) *web.Response {
 // POST /company
 func companies(r *http.Request) *web.Response {
 	id, segments := web.PathLast(r)
+	queryValues := r.URL.Query()
 	switch r.Method {
 
 	case http.MethodDelete:
@@ -59,6 +62,24 @@ func companies(r *http.Request) *web.Response {
 			return web.HTML(http.StatusOK, html, "row.html", row, nil)
 		} else {
 			//cancel add
+			nextSortDirection := "descending"
+			if queryValues.Get("sort") == "name" {
+				slices.SortFunc(data,
+					func(a, b Company) int {
+						return cmp.Compare(a.Company, b.Company)
+					})
+
+				if queryValues.Get("direction") == "descending" {
+					slices.Reverse(data)
+					nextSortDirection = "ascending"
+				}
+				response := SortReponse{
+					Data:              data,
+					NextSortDirection: nextSortDirection,
+				}
+				return web.HTML(http.StatusOK, html, "sort-response.html", response, nil)
+			}
+
 			return web.HTML(http.StatusOK, html, "companies.html", data, nil)
 		}
 

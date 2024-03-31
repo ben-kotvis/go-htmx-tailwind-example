@@ -20,16 +20,25 @@
             <thead class="border-b font-medium dark:border-neutral-500">
               <tr>
                 <th scope="col" class="px-6 py-4">#</th>
-                <th scope="col" class="px-6 py-4">Company</th>
+                <th scope="col" class="px-6 py-4">
+                  <a
+                  id="company-sort-link"
+                  hx-get="/company?sort=name&direction=ascending"
+                  hx-target="#table-body"
+                  hx-select="#table-body"
+                  hx-swap="outerHTML"
+                  hx-indicator="#processing"
+                  class="hover:underline text-blue-700"
+                  href=""
+                >
+                  Company
+                </a>
+                </th>
                 <th scope="col" class="px-6 py-4">Contact</th>
                 <th scope="col" class="px-6 py-4">Country</th>
               </tr>
             </thead>
-            <tbody id="table-body">
-              {{range .}}
-                {{ template "row.html". }}
-              {{end}}
-            </tbody>
+            {{ template "table-body.html". }}
           </table>
         </div>
       </div>

@@ -11,6 +11,11 @@ type Company struct {
 	Country string
 }
 
+type SortReponse struct {
+	Data              []Company
+	NextSortDirection string
+}
+
 func init() {
 	data = []Company{
 		{
@@ -50,37 +55,37 @@ func init() {
 			Country: "United States",
 		},
 		{
-			ID:      "1",
+			ID:      "7",
 			Company: "Amazon",
 			Contact: "Jeff Bezos",
 			Country: "United States",
 		},
 		{
-			ID:      "2",
+			ID:      "8",
 			Company: "Apple",
 			Contact: "Tim Cook",
 			Country: "United States",
 		},
 		{
-			ID:      "3",
+			ID:      "9",
 			Company: "Microsoft",
 			Contact: "Satya Nadella",
 			Country: "United States",
 		},
 		{
-			ID:      "4",
+			ID:      "10",
 			Company: "Amazon",
 			Contact: "Jeff Bezos",
 			Country: "United States",
 		},
 		{
-			ID:      "5",
+			ID:      "11",
 			Company: "Apple",
 			Contact: "Tim Cook",
 			Country: "United States",
 		},
 		{
-			ID:      "6",
+			ID:      "12",
 			Company: "Microsoft",
 			Contact: "Satya Nadella",
 			Country: "United States",
