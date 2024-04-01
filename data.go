@@ -14,6 +14,8 @@ type Company struct {
 type SortReponse struct {
 	Data              []Company
 	NextSortDirection string
+	ArrowUpClass      string
+	ArrowDownClass    string
 }
 
 func init() {
