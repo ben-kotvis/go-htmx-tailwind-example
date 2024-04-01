@@ -10,10 +10,7 @@ func sort(queryValues *url.Values) *SortReponse {
 	nextSortDirection := "descending"
 	arrowUpClass := "hide"
 	arrowDownClass := "hide"
-	slices.SortFunc(data,
-		func(a, b Company) int {
-			return cmp.Compare(a.Company, b.Company)
-		})
+	slices.SortFunc(data, getSortByName(queryValues))
 	if queryValues.Get("direction") == "descending" {
 		slices.Reverse(data)
 		nextSortDirection = "ascending"
@@ -28,4 +25,25 @@ func sort(queryValues *url.Values) *SortReponse {
 		ArrowDownClass:    arrowDownClass,
 	}
 	return &response
+}
+
+func getSortByName(queryValues *url.Values) func(a Company, b Company) int {
+	switch sortName := queryValues.Get("sort"); sortName {
+	default:
+	case "Company":
+		return func(a Company, b Company) int {
+			return cmp.Compare(a.Company, b.Company)
+		}
+	case "Contact":
+		return func(a Company, b Company) int {
+			return cmp.Compare(a.Contact, b.Contact)
+		}
+	case "Country":
+		return func(a Company, b Company) int {
+			return cmp.Compare(a.Country, b.Country)
+		}
+	}
+	return func(a Company, b Company) int {
+		return cmp.Compare(a.Company, b.Company)
+	}
 }

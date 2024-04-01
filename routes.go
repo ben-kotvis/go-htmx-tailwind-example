@@ -60,7 +60,7 @@ func companies(r *http.Request) *web.Response {
 			return web.HTML(http.StatusOK, html, "row.html", row, nil)
 		} else {
 			//cancel add
-			if queryValues.Get("sort") == "name" {
+			if queryValues.Has("sort") {
 				return web.HTML(http.StatusOK, html, "sort-response.html", sort(&queryValues), nil)
 			}
 
