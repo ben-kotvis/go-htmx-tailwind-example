@@ -1,0 +1,12 @@
+
+<a
+hx-get='/company?sort={{.Label}}&direction={{.NextSortDirection}}'
+hx-target="#table-body"
+hx-select="#table-body"
+hx-swap="outerHTML"
+hx-indicator="#processing"
+class="hover:underline text-blue-700"
+href=""
+>
+{{.Label}}
+</a>

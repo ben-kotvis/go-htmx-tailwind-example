@@ -17,7 +17,7 @@ import (
 // Cancel ->	 GET /company -> nothing, companys.html
 
 func index(r *http.Request) *web.Response {
-	return web.HTML(http.StatusOK, html, "index.html", data, nil)
+	return web.HTML(http.StatusOK, html, "index.html", companiesResponse(), nil)
 }
 
 func modal(r *http.Request) *web.Response {
@@ -64,7 +64,7 @@ func companies(r *http.Request) *web.Response {
 				return web.HTML(http.StatusOK, html, "sort-response.html", sort(&queryValues), nil)
 			}
 
-			return web.HTML(http.StatusOK, html, "companies.html", data, nil)
+			return web.HTML(http.StatusOK, html, "companies.html", companiesResponse(), nil)
 		}
 
 	//save edit
@@ -89,4 +89,25 @@ func companies(r *http.Request) *web.Response {
 	}
 
 	return web.Empty(http.StatusNotImplemented)
+}
+
+func companiesResponse() *CompaniesResponse {
+	return &CompaniesResponse{
+		Data: data,
+		CompanyTableHeader: TableHeader{
+			Label:             "Company",
+			NextSortDirection: "ascending",
+			Selected:          false,
+		},
+		CountryTableHeader: TableHeader{
+			Label:             "Country",
+			NextSortDirection: "ascending",
+			Selected:          false,
+		},
+		ContactTableHeader: TableHeader{
+			Label:             "Contact",
+			NextSortDirection: "ascending",
+			Selected:          false,
+		},
+	}
 }

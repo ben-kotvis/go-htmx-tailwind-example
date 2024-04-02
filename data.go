@@ -18,6 +18,12 @@ type SortReponse struct {
 	ArrowDownClass    string
 }
 
+type TableHeader struct {
+	Label             string
+	NextSortDirection string
+	Selected          bool
+}
+
 func init() {
 	data = []Company{
 		{

@@ -21,24 +21,18 @@
               <tr>
                 <th scope="col" class="px-6 py-4">#</th>
                 <th scope="col" class="px-6 py-4">
-                  <a
-                  id="company-sort-link"
-                  hx-get="/company?sort=Company&direction=ascending"
-                  hx-target="#table-body"
-                  hx-select="#table-body"
-                  hx-swap="outerHTML"
-                  hx-indicator="#processing"
-                  class="hover:underline text-blue-700"
-                  href=""
-                >
-                  Company
-                </a>
+                  {{ template "sort-link.html" .CompanyTableHeader }}
                 </th>
-                <th scope="col" class="px-6 py-4">Contact</th>
-                <th scope="col" class="px-6 py-4">Country</th>
+                <th scope="col" class="px-6 py-4">
+{{ template "sort-link.html" .ContactTableHeader }}
+
+                </th>
+                <th scope="col" class="px-6 py-4">
+{{ template "sort-link.html" .CountryTableHeader }}
+                </th>
               </tr>
             </thead>
-            {{ template "table-body.html". }}
+            {{ template "table-body.html" .Data }}
           </table>
         </div>
       </div>
