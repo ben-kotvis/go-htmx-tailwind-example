@@ -5,14 +5,9 @@
       <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
         <div class="overflow-hidden">
           <div class="flex justify-end">
-            <button
-              hx-get="/company/add"
-              hx-target="#table-body"
-              hx-swap="outerHTML"
-              hx-indicator="#processing"
+            <button hx-get="/company/add" hx-target="#table-body" hx-swap="outerHTML" hx-indicator="#processing"
               class="inline-flex items-center h-8 px-4 m-2 text-sm text-blue-100 transition-colors duration-150 bg-blue-700 rounded-lg focus:shadow-outline hover:bg-blue-800"
-              href=""
-            >
+              href="">
               Add
             </button>
           </div>
@@ -24,15 +19,36 @@
                   {{ template "sort-link.html" .CompanyTableHeader }}
                 </th>
                 <th scope="col" class="px-6 py-4">
-{{ template "sort-link.html" .ContactTableHeader }}
+                  {{ template "sort-link.html" .ContactTableHeader }}
 
                 </th>
                 <th scope="col" class="px-6 py-4">
-{{ template "sort-link.html" .CountryTableHeader }}
+                  {{ template "sort-link.html" .CountryTableHeader }}
                 </th>
               </tr>
             </thead>
             {{ template "table-body.html" .Data }}
+            <tfoot>
+
+              <td colspan="4"></td>
+              <td colspan="2"><a
+                hx-get='/company?sort={{.CurrentSortField}}&direction={{.CurrentSortDirection}}&skip=0'
+                hx-target="#companies"
+                hx-swap="outerHTML"
+                hx-indicator="#processing"
+                class="hover:underline text-blue-700"
+                href=""
+                >First</a>
+                <a
+                hx-get='/company?sort={{.CurrentSortField}}&direction={{.CurrentSortDirection}}&skip=1'
+                hx-target="#companies"
+                hx-swap="outerHTML"
+                hx-indicator="#processing"
+                class="hover:underline text-blue-700"
+                href=""
+                >Next</a>
+              </td>
+            </tfoot>
           </table>
         </div>
       </div>

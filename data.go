@@ -22,6 +22,8 @@ type TableHeader struct {
 	Label             string
 	NextSortDirection string
 	Selected          bool
+	ArrowUpClass      string
+	ArrowDownClass    string
 }
 
 func init() {
