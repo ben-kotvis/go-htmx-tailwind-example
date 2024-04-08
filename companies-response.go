@@ -4,7 +4,9 @@ type CompaniesResponse struct {
 	Data                 []Company
 	CurrentSortField     string
 	CurrentSortDirection string
-	PageIndex            int
+	CurrentSkip          int
+	PreviousSkip         int
+	NextSkip             int
 	CompanyTableHeader   TableHeader
 	ContactTableHeader   TableHeader
 	CountryTableHeader   TableHeader

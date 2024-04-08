@@ -650,24 +650,16 @@ select {
   height: 1.25rem;
 }
 
-.w-full {
-  width: 100%;
-}
-
 .w-5 {
   width: 1.25rem;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .min-w-full {
   min-width: 100%;
-}
-
-.basis-1\/4 {
-  flex-basis: 25%;
-}
-
-.basis-3\/4 {
-  flex-basis: 75%;
 }
 
 .table-auto {
@@ -712,10 +704,6 @@ select {
   border-radius: 0.5rem;
 }
 
-.rounded-sm {
-  border-radius: 0.125rem;
-}
-
 .rounded {
   border-radius: 0.25rem;
 }
@@ -733,14 +721,13 @@ select {
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
-.bg-gray-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
-}
-
 .bg-red-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
+.stroke-1 {
+  stroke-width: 1;
 }
 
 .py-2 {
@@ -819,11 +806,6 @@ select {
   color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
@@ -858,6 +840,10 @@ select {
 .hover\:bg-red-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(153 27 27 / var(--tw-bg-opacity));
+}
+
+.hover\:stroke-2:hover {
+  stroke-width: 2;
 }
 
 .hover\:underline:hover {

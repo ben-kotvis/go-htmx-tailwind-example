@@ -13,19 +13,21 @@ func companiesResponse(queryValues *url.Values) *CompaniesResponse {
 	if queryValues.Get("direction") == "descending" {
 		slices.Reverse(data)
 	}
-	skip := "0"
+	skipStr := "0"
 	if queryValues.Has("skip") {
-		skip = queryValues.Get("skip")
+		skipStr = queryValues.Get("skip")
 	}
-	pageIndex, err := strconv.Atoi(skip)
+	skip, err := strconv.Atoi(skipStr)
 	if err != nil {
 		panic(err)
 	}
 	return &CompaniesResponse{
-		Data:                 data,
+		Data:                 data[skip : skip+4],
 		CurrentSortField:     queryValues.Get("sort"),
 		CurrentSortDirection: queryValues.Get("direction"),
-		PageIndex:            pageIndex,
+		CurrentSkip:          skip,
+		PreviousSkip:         skip - 4,
+		NextSkip:             skip + 4,
 		CompanyTableHeader:   *getHeader(queryValues, "Company"),
 		CountryTableHeader:   *getHeader(queryValues, "Country"),
 		ContactTableHeader:   *getHeader(queryValues, "Contact"),
