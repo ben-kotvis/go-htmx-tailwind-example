@@ -104,11 +104,15 @@
 .icon {
         width: 1.25em;
         display: inline;
-        margin-right: 40px;
         position: relative;
         top: 0.10em;
     }
 
 .hide {
 	display:none;
+}
+
+.disabled {
+	pointer-events: none;
+	opacity: 30%;
 }

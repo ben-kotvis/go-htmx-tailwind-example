@@ -24,7 +24,8 @@
             "request": "attach",
             "mode": "remote",
             "port": 41581,
-            "debugAdapter": "dlv-dap"
+            "debugAdapter": "dlv-dap",
+            "preLaunchTask": "css-watch"
         }
     ]
 }
