@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,15 +9,20 @@
   <meta name="htmx-config" content='{"useTemplateFragments": true}'>
   <link href="/css/output.css" rel="stylesheet" />
   <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
-  <title>Go + HTMX + Tailwind</title>
+  <title>Customer Resource Manager</title>
 </head>
 
-<body>
+<body class="dark:bg-black dark:text-yellow-50" >
   <main>
+    <div class="flex flex-row dark:bg-slate-800 dark:text-white p-4">
+      <h1 class="text-2xl">Customer Resource Manager</h1>
+    </div>
     <div class="flex flex-row">
-      <div>
-        <div class="md:container">
-          <h1 class="text-3xl">Go + HTMX + Tailwind Example</h1>
+
+      <div class="basis-1/4"> 
+        </div>
+      <div class="basis-3/4 grow">
+        <div class="md:container md:mx-auto">
           <br />
           <span class="text-xl">Companies</span>
           <div>{{ template "companies.html" . }}</div>
