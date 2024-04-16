@@ -116,3 +116,7 @@
 	pointer-events: none;
 	opacity: 30%;
 }
+
+.left-pane {
+	border-right: 0.5ex solid rgb(30, 41, 59);
+}

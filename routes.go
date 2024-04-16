@@ -87,7 +87,7 @@ func companies(r *http.Request) *web.Response {
 		row.Contact = r.Form.Get("contact")
 		row.Country = r.Form.Get("country")
 		addCompany(row)
-		return web.HTML(http.StatusOK, html, "companies.html", data, nil)
+		return web.HTML(http.StatusOK, html, "companies.html", companiesResponse(&queryValues), nil)
 	}
 
 	return web.Empty(http.StatusNotImplemented)
