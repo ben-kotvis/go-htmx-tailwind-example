@@ -34,7 +34,7 @@
               <td colspan="4">
                 <div class="text-right">
                   <a hx-get='/company?sort={{.CurrentSortField}}&direction={{.CurrentSortDirection}}&skip=0'
-                    hx-target="#companies" hx-swap="outerHTML" hx-indicator="#processing" class="text-blue-700" href="">
+                    hx-target="#companies" hx-swap="outerHTML" hx-indicator="#processing" class="text-white" href="">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" class="w-5 h-5 icon fill-none stroke-1 hover:stroke-2">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -42,9 +42,9 @@
                     </svg>
                   </a>
                   {{ $hide :=  (lt .PreviousSkip 0)}}
-                  {{ $class := "text-blue-700" }}
+                  {{ $class := "text-white" }}
                   {{if $hide}}
-                  {{ $class = "text-blue-700 disabled" }}
+                  {{ $class = "text-white disabled" }}
                   {{end}}
                   <a hx-get='/company?sort={{.CurrentSortField}}&direction={{.CurrentSortDirection}}&skip={{.PreviousSkip}}'
                     hx-target="#companies" hx-swap="outerHTML" hx-indicator="#processing" class="{{$class}}" href="" >
@@ -54,7 +54,7 @@
                     </svg>
                   </a>
                   <a hx-get='/company?sort={{.CurrentSortField}}&direction={{.CurrentSortDirection}}&skip={{.NextSkip}}'
-                    hx-target="#companies" hx-swap="outerHTML" hx-indicator="#processing" class="text-blue-700" href="">
+                    hx-target="#companies" hx-swap="outerHTML" hx-indicator="#processing" class="text-white" href="">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" class="w-5 h-5 icon fill-none stroke-1 hover:stroke-2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -62,7 +62,7 @@
                   </a>
 
                   <a hx-get='/company?sort={{.CurrentSortField}}&direction={{.CurrentSortDirection}}&skip={{.NextSkip}}'
-                    hx-target="#companies" hx-swap="outerHTML" hx-indicator="#processing" class="text-blue-700" href="">
+                    hx-target="#companies" hx-swap="outerHTML" hx-indicator="#processing" class="text-white" href="">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" class="w-5 h-5 icon fill-none stroke-1 hover:stroke-2">
                       <path stroke-linecap="round" stroke-linejoin="round"

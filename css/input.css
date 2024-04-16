@@ -118,5 +118,9 @@
 }
 
 .left-pane {
-	border-right: 0.5ex solid rgb(30, 41, 59);
+	background-color: rgb(20, 27, 38);
+}
+
+.object-fill {
+	min-height: 100vh;
 }

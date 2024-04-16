@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark object-fill">
 
 <head>
   <meta charset="UTF-8" />
@@ -12,19 +12,19 @@
   <title>Customer Resource Manager</title>
 </head>
 
-<body class="dark:bg-black dark:text-yellow-50" >
+<body class="dark:bg-black dark:text-yellow-50 object-fill">
   <main>
     <div class="flex flex-row dark:bg-slate-800 dark:text-white p-4">
       <h1 class="text-2xl">Customer Resource Manager</h1>
     </div>
-    <div class="flex flex-row">
-      <div class="basis-1/4 left-pane"> 
-        </div>
+    <div class="flex flex-row object-fill">
+      <div class="basis-1/4 left-pane">
+      </div>
       <div class="basis-3/4 grow p-1">
         <div class="md:container md:mx-auto">
           <br />
           <div class="p-2">
-          <span class="text-xl">Companies</span>
+            <span class="text-xl">Companies</span>
           </div>
           <div>{{ template "companies.html" . }}</div>
         </div>

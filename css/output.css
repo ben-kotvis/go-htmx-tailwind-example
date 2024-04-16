@@ -734,16 +734,13 @@ select {
   stroke-width: 1;
 }
 
+.object-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
 .p-4 {
   padding: 1rem;
-}
-
-.p-0\.5 {
-  padding: 0.125rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .p-1 {
@@ -842,6 +839,11 @@ select {
 .text-red-100 {
   --tw-text-opacity: 1;
   color: rgb(254 226 226 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .shadow {
@@ -1081,5 +1083,9 @@ select {
 }
 
 .left-pane {
-  border-right: 0.5ex solid rgb(30, 41, 59);
+  background-color: rgb(20, 27, 38);
+}
+
+.object-fill {
+  min-height: 100vh;
 }
