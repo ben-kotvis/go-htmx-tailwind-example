@@ -1,8 +1,10 @@
 package main
 
 import (
+	"context"
 	"net/http"
 
+	dapr "github.com/dapr/go-sdk/client"
 	"github.com/jritsema/gotoolbox/web"
 )
 
@@ -30,7 +32,20 @@ func modal(r *http.Request) *web.Response {
 
 // GET /company/add
 func companyAdd(r *http.Request) *web.Response {
+	ctx := context.Background()
+
+	client, err := dapr.NewClient()
+	if err != nil {
+		panic(err)
+	}
+	defer client.Close()
+
+	data := []byte(`{ "id": "a123", "value": "abcdefg", "valid": true }`)
+	if err := client.PublishEvent(ctx, "component-name", "topic-name", data); err != nil {
+		panic(err)
+	}
 	return web.HTML(http.StatusOK, html, "company-add.html", data, nil)
+
 }
 
 // /GET company/edit/{id}
